@@ -35,6 +35,14 @@ export const GlobalStyle = createGlobalStyle`
     --purple-900: #130525;
   }
 
+  html {
+    @media (max-width: 386px) {
+      body {
+        background-color: var(--purple-900);
+      }
+    }
+  }
+
   .swal2-title {
     color: var(--navy-500) !important;
   }

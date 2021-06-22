@@ -82,19 +82,18 @@ export const Container = styled.div`
   @media (max-width: 386px) {
     
     ${ContentContainer} {
-      background-image: linear-gradient(0deg, #130525 0%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
-      background-position-x: center;
+      background-image: linear-gradient(0deg, var(--purple-900) 50%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
       background-size: contain;
-      /* background-size: 100% 50%; */
       background-repeat: no-repeat; 
+      overflow-x: hidden;
     }
     
     ${Content} {
       background-color: #FAF5FF;
       border-radius: 8px;
       padding: 28px 24px 57px;
-      min-width: 310px;
       position: relative;
+      min-width: 256px;
     }
 
     ${Background} {
@@ -116,15 +115,20 @@ export const Container = styled.div`
       }
     }
 
+    ${Input} {
+      /* min-width: 256px; */
+    }
+
     ${Footer} {
       position: absolute;
       align-items: center;;
-      bottom: -95px;
+      bottom: -87px;
       left: 50%;
       margin-left: -121.08px;
     }
 
     ${FooterMessage} {
+      margin-top: 1.5rem;
       color: var(--white);
       a {
         color: var(--white);
