@@ -18,7 +18,7 @@ export const ContentContainer = styled.div`
 `
 
 export const Content = styled.div`
-  min-width: 16rem;
+  min-width: 16rem; 
 `;
 
 export const Title = styled.h1`

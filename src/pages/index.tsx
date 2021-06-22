@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import api from '../services/api';
-import { Background, Container, Content, ContentContainer, Footer, FooterMessage, Form, Subtitle, Title } from '../styles/Login.ts';
+import { Background, Container, Content, ContentContainer, Footer, FooterMessage, Form, Subtitle, Title } from '../styles/login';
 
 interface FormData {
   email: string;
