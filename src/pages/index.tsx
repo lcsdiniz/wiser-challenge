@@ -6,10 +6,15 @@ import * as yup from "yup";
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import api from '../services/api';
-import { Background, Container, Content, ContentContainer, Footer, Form, Subtitle, Title } from '../styles/Login.ts';
+import { Background, Container, Content, ContentContainer, Footer, FooterMessage, Form, Subtitle, Title } from '../styles/Login.ts';
+
+interface FormData {
+  email: string;
+  password: string;
+}
 
 export default function Login() {
-  const onSubmit = async data => {
+  const onSubmit = async (data: FormData) => {
     const id = (data.email === 'teste@wiser.com' && data.password === '123456') ? 26 : 0;
     try {
     const response = await api.get(`signin/${id}`);
@@ -45,16 +50,17 @@ export default function Login() {
         <Background />
         <ContentContainer>
           <Content>
-            <Title>Olá, seja<br/>bem-vindo!</Title>
+            <Title>Olá, seja <br/>bem-vindo!</Title>
             <Subtitle>Para acessar a plataforma, <br/> faça seu login.</Subtitle>
 
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Input label="E-MAIL" placeholder="user.name@mail.com" inputError={errors.email} {...register("email")} />
               <Input label="SENHA" type="password" inputError={errors.password} {...register("password")} />
-              <Button label="ENTRAR" type="submit" />
+              <Footer>
+                <Button label="ENTRAR" type="submit" />
+                <FooterMessage>Esqueceu seu login ou senha?<br/>Clique <a href="#">aqui</a></FooterMessage>
+              </Footer>
             </Form>
-            
-            <Footer>Esqueceu seu login ou senha?<br/>Clique <a href="#">aqui</a></Footer>
           </Content>     
         </ContentContainer>     
       </Container>

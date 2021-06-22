@@ -44,7 +44,12 @@ export const Form = styled.form`
   }
 `
 
-export const Footer = styled.p`
+export const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const FooterMessage = styled.p`
   text-align: center;
   font-size: 1rem;
   color: var(--navy-100);
@@ -77,18 +82,19 @@ export const Container = styled.div`
   @media (max-width: 386px) {
     
     ${ContentContainer} {
-      /* background-image: linear-gradient(0deg, #130525 0%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
+      background-image: linear-gradient(0deg, #130525 0%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
       background-position-x: center;
-      background-size: cover; */
-      background-color: transparent;
-
+      background-size: contain;
+      /* background-size: 100% 50%; */
+      background-repeat: no-repeat; 
     }
     
     ${Content} {
       background-color: #FAF5FF;
       border-radius: 8px;
-      padding: 24px 28px;
+      padding: 28px 24px 57px;
       min-width: 310px;
+      position: relative;
     }
 
     ${Background} {
@@ -103,10 +109,32 @@ export const Container = styled.div`
     ${Subtitle} {
       font-size: 0.75rem;
       text-align: center;
+      margin-bottom: 1.25rem;
+
+      br {
+        display: none;
+      }
+    }
+
+    ${Footer} {
+      position: absolute;
+      align-items: center;;
+      bottom: -95px;
+      left: 50%;
+      margin-left: -121.08px;
+    }
+
+    ${FooterMessage} {
+      color: var(--white);
+      a {
+        color: var(--white);
+      }
     }
 
     ${Button} {
-      max-width: 168px;
+      margin: 0;
+      width: 168px;
+      box-shadow: none;
     }
   }
 `;

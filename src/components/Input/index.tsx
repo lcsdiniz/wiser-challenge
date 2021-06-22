@@ -1,6 +1,7 @@
+import Image from 'next/image';
 import { InputHTMLAttributes } from 'react';
 import { FieldError } from "react-hook-form";
-import { Container, InputError } from './styles';
+import { Container, InputContainer, InputError } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -10,9 +11,21 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function Input({ label, placeholder, inputError, ...rest }:InputProps) {
   return (
-    <Container errorMessage>
+    <Container>
+      {console.log(label, inputError !== undefined)}
       <label>{label}</label>
-      <input placeholder={placeholder} {...rest} />
+      <InputContainer hasError={inputError !== undefined}>
+        <input placeholder={placeholder} {...rest} />
+        
+        {inputError && 
+          <Image
+            src='/closeIcon.svg'
+            alt="erro"
+            width={16}
+            height={16}
+          />
+        }
+      </InputContainer>
       {inputError && <InputError>{inputError.message}</InputError>}
     </Container>
   )
