@@ -12,7 +12,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export function Input({ label, placeholder, inputError, ...rest }:InputProps) {
   return (
     <Container>
-      {console.log(label, inputError !== undefined)}
       <label>{label}</label>
       <InputContainer hasError={inputError !== undefined}>
         <input placeholder={placeholder} {...rest} />

@@ -4,14 +4,14 @@ import { Container as Input } from '../components/Input/styles';
 
 export const Background = styled.div`
   flex: 1;
-  background-image: linear-gradient(0deg, #130525 0%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
+  background-image: linear-gradient(0deg, var(--purple-900) 0%, rgba(105, 57, 153, 0) 100%),  url('/backgroundImage.png');
   background-position-x: center;
   background-size: cover;
 `;
 
 export const ContentContainer = styled.div`
   display: flex;
-  background-color: #FAF5FF;
+  background-color: var(--gray-100);
   padding-left: 7rem;
   flex: 1;
   align-items: center;
@@ -89,7 +89,7 @@ export const Container = styled.div`
     }
     
     ${Content} {
-      background-color: #FAF5FF;
+      background-color: var(--gray-100);
       border-radius: 8px;
       padding: 28px 24px 57px;
       position: relative;
@@ -113,10 +113,6 @@ export const Container = styled.div`
       br {
         display: none;
       }
-    }
-
-    ${Input} {
-      /* min-width: 256px; */
     }
 
     ${Footer} {

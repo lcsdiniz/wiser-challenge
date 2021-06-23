@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Home | Wiser</title>
+        <title>Login | Wiser</title>
       </Head>
       <Container>
         <Background />
