@@ -16,7 +16,7 @@ import {
   Form,
   Subtitle,
   Title
-} from '../styles/login';
+} from '../styles/Login';
 
 interface FormData {
   email: string;
