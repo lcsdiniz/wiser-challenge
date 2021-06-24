@@ -5,10 +5,12 @@ interface ButtonProps extends  ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
 }
 
-export function Button({ label, ...rest } :ButtonProps) {
+const Button = ({ label, ...rest } :ButtonProps) => {
   return (
     <Container {...rest}>
       {label}
     </Container>
   )
 }
+
+export default Button;

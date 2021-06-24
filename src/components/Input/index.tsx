@@ -1,25 +1,32 @@
 import Image from 'next/image';
 import { InputHTMLAttributes } from 'react';
-import { FieldError } from "react-hook-form";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import { Container, InputContainer, InputError } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   placeholder?: string;
   inputError?: FieldError;
+  name: string;
+  register: (arg0: string) => UseFormRegisterReturn;
 }
 
-export function Input({ label, placeholder, inputError, ...rest }:InputProps) {
+const Input = ({ label, placeholder, inputError, name, register, ...rest }:InputProps) => {
   return (
     <Container>
-      <label>{label}</label>
+      <label htmlFor={label}>{label}</label>
       <InputContainer hasError={inputError !== undefined}>
-        <input placeholder={placeholder} {...rest} />
+        <input
+          id={label}
+          placeholder={placeholder}
+          {...register(name)}
+          {...rest}
+        />
         
         {inputError && 
           <Image
             src='/closeIcon.svg'
-            alt="erro"
+            alt={`erro-${name}`}
             width={16}
             height={16}
           />
@@ -29,3 +36,6 @@ export function Input({ label, placeholder, inputError, ...rest }:InputProps) {
     </Container>
   )
 }
+
+export default Input;
+
