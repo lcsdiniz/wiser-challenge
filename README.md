@@ -16,6 +16,7 @@
 - [sweetalert2](https://sweetalert2.github.io/);
 - [axios](https://github.com/axios/axios);
 - [mockApi](https://mockapi.io/projects);
+- [Testing Library](https://testing-library.com/).
 
 ## 🏁 Get started
  ```bash
@@ -23,8 +24,14 @@
 ```
   or
   
-https://diniz-wiser-challenge.vercel.app/  
+https://diniz-wiser-challenge.vercel.app/
+  
 E-mail: teste@wiser.com  |  Password: 123456
+  
+## 🧪 Tests
+ ```bash
+  yarn test
+```
 
 ## 📮 Feedback
 
