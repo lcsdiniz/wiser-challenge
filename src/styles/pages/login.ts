@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Container as Button } from '../components/Button/styles';
-import { Container as Input } from '../components/Input/styles';
+import { Container as Button } from '../../components/Button/styles';
+import { Container as Input } from '../../components/Input/styles';
 
 export const Background = styled.div`
   flex: 1;
